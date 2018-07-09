@@ -1,7 +1,7 @@
 const async = require('async')
 const config = require('../config')
 const { graphqlClient } = require('../lib/github')
-const operations = require('../graphql/queries')
+const { query, mutation } = require('../graphql')
 
 const { owner, repo } = config.github
 const baseVariables = { owner, name: repo }
@@ -17,7 +17,7 @@ const addToProject = async (project, issue, variables) => {
     const projectCardMutationVariables = Object.assign({}, variables, {
       "issue": { contentId, projectColumnId }
     })
-    await graphqlClient.request(operations.AddProjectCard, projectCardMutationVariables)
+    await graphqlClient.request(mutation.AddProjectCard, projectCardMutationVariables)
   }
 }
 
@@ -30,7 +30,7 @@ const moveProjectCard = async (destinationColumnName, issue, variables) => {
     id: cardId,
     project: { name: projectName },
     column: { id: currentColumnId, name: currentColumnName } } }) => {
-    const project = await graphqlClient.request(operations.FindProjectColumns,
+    const project = await graphqlClient.request(query.FindProjectColumns,
       Object.assign({}, variables, { projectName })
     )
     const { repository: { projects: { edges } } } = project
@@ -42,7 +42,7 @@ const moveProjectCard = async (destinationColumnName, issue, variables) => {
         const projectCardMutationVariables = Object.assign({}, variables, {
           "card": { cardId, columnId }
         })
-        await graphqlClient.request(operations.MoveProjectCard, projectCardMutationVariables)
+        await graphqlClient.request(mutation.MoveProjectCard, projectCardMutationVariables)
       })
     })
   })
@@ -54,8 +54,8 @@ async function labeled (payload) {
     number, projectName: name
   })
   const [issue, project] = await Promise.all([
-    graphqlClient.request(operations.FindIssue, variables),
-    graphqlClient.request(operations.FindProject, variables)
+    graphqlClient.request(query.FindIssue, variables),
+    graphqlClient.request(query.FindProject, variables)
   ])
   const issueLabels = issue.repository.issue.labels.edges
     .filter((label) => label.node.name === name)

@@ -1,2 +1,1 @@
-const labeled = require('./labeled')
-module.exports = { labeled }
+module.exports = { labeled: require ('./labeled') }

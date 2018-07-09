@@ -1,15 +1,11 @@
 const { json, send, text } = require('micro')
 const micro = require('micro')
-const CronJob = require('cron').CronJob
-const moment = require('moment')
 const config = require('../config')
 const actions = require('../actions')
 const { signRequestBody } = require('../lib/crypto')
-
 const { port } = config.server
 
 const app = async (req, res) => {
-  // Return if not json body
   if (req.headers['content-type'] !== 'application/json') {
     return send(res, 500, { body: `Update webhook to send 'application/json' format`})
   }
@@ -66,23 +62,11 @@ const app = async (req, res) => {
         body: errMessage })
     }
 
-    const now = moment()
-    const tz = moment.tz.guess()
-    const time = (number, unit) => now.clone().add(number, unit).toDate()
-
-    const job = new CronJob({
-      cronTime: (action === 'opened' || action === 'closed')
-      ? time(15, 'minutes')
-      : time(1, 'minute'),
-      onTick: () => { actions[action](payload) },
-      start: false,
-      timeZone: tz
-    })
-
-    job.start()
+    // Invoke action
+    actions[action](payload)
 
     return send(res, 200, {
-      body: `Scheduled '${action}' job for issue: '${payload.issue.number}' at: '${job.nextDates().format()}'`
+      body: `Processed '${action}' for issue: '${payload.issue.number}'`
     })
   } catch(err) {
     console.log(err)
