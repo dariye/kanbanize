@@ -1,7 +1,6 @@
 {
   "name": "kanbanize",
-  "description": "Triage issues on github project boards",
-  "alias": "andela-studio-issue-er",
-  "env": { "TOKEN", "WEBHOOK_SECRET", "OWNER", "REPOSITORY" },
+  "alias": "kanbanize",
+  "env": [ "TOKEN", "WEBHOOK_SECRET", "OWNER", "REPOSITORY" ],
   "type": "npm"
 }
