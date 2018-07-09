@@ -1,9 +1,9 @@
 const ngrok = require('ngrok')
 const config = require('../config')
-const { subdomain, server: { port } } = config
+const { subdomain } = config
 let URL
 ngrok.connect({
-  addr: port,
+  addr: 3000,
   subdomain: subdomain.name
 }, function (err, url) {
   URL = url

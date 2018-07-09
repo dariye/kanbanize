@@ -2,9 +2,6 @@
   "name": "kanbanize",
   "description": "Triage issues on github project boards",
   "alias": "andela-studio-issue-er",
-  "env": { "TOKEN", "WEBHOOK_SECRET", "OWNER", "REPOSITORY",
-    "ENDPOINT": "https://api.github.com/graphql",
-    "PORT": "3000"
-  },
+  "env": { "TOKEN", "WEBHOOK_SECRET", "OWNER", "REPOSITORY" },
   "type": "npm"
 }

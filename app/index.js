@@ -3,7 +3,6 @@ const micro = require('micro')
 const config = require('../config')
 const actions = require('../actions')
 const { signRequestBody } = require('../lib/crypto')
-const { port } = config.server
 
 const app = async (req, res) => {
   if (req.headers['content-type'] !== 'application/json') {
@@ -74,4 +73,4 @@ const app = async (req, res) => {
   }
 }
 const server = micro(app)
-server.listen(port || 3000)
+server.listen(3000)
