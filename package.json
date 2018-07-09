@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development  bin/start-dev.sh",
+    "start": "forever -m start app/index.js",
     "ngrok": "node bin/start-ngrok.js",
     "precommit": "lint-staged",
     "lint": "xo",
@@ -30,22 +31,19 @@
   },
   "dependencies": {
     "async": "^2.6.0",
-    "concurrently": "^3.6.0",
-    "cron": "^1.3.0",
-    "dotenv": "^5.0.1",
+    "forever": "^0.15.3",
     "graphql-request": "^1.3.6",
     "joi": "^13.1.2",
-    "jsonfile": "^4.0.0",
     "micro": "^9.1.4",
-    "micro-cors": "^0.0.4",
-    "moment": "^2.22.0",
-    "ngrok": "^3.0.1"
+    "micro-cors": "^0.0.4"
   },
   "devDependencies": {
+    "concurrently": "^3.6.0",
     "dotenv-safe": "^6.0.0",
     "eslint-config-prettier": "^2.6.0",
     "eslint-plugin-prettier": "^2.3.1",
     "micro-dev": "^2.1.0",
+    "ngrok": "^3.0.1",
     "nodemon": "^1.17.3",
     "prettier": "^1.7.3",
     "xo": "^0.18.2"
