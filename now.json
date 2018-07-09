@@ -6,5 +6,5 @@
     "ENDPOINT": "https://api.github.com/graphql",
     "PORT": "3000"
   },
-  "type": "docker"
+  "type": "npm"
 }

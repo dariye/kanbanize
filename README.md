@@ -1,4 +1,4 @@
-[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/pauldariye/kanbanize&env=TOKEN&env=ENDPOINT&env=WEBHOOK_SECRET&env=OWNER&env=RESPOSITORY&env=PORT)
+[![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/pauldariye/kanbanize&env=TOKEN&env=ENDPOINT=https://api.github.com/graphql&env=WEBHOOK_SECRET&env=OWNER&env=RESPOSITORY&env=PORT=3000)
 # Kanbanize
 
 This is a simple issues triager for github project boards. Github projects are
