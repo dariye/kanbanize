@@ -1,17 +1,16 @@
-const addProjectCard = `
+module.exports = `
   mutation AddProjectCard($issue: AddProjectCardInput!) {
-      addProjectCard(input: $issue) {
-        cardEdge {
-          node {
-            id
-          }
-        }
-        projectColumn {
+    addProjectCard(input: $issue) {
+      cardEdge {
+        node {
           id
-        },
-        clientMutationId
+        }
       }
+      projectColumn {
+        id
+      }
+      clientMutationId
     }
-  `
-module.exports = addProjectCard
+  }
+`
 

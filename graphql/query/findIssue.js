@@ -1,10 +1,11 @@
-const findIssue = `
+module.exports = `
   query FindIssue($owner: String!, $name: String!, $number: Int!) {
     repository(owner: $owner, name: $name) {
       issue(number: $number) {
         id
+        number
         title
-        projectCards(first: 20) {
+        projectCards(first: 100) {
           edges {
             node {
               id
@@ -32,4 +33,3 @@ const findIssue = `
     }
   }
 `
-module.exports = findIssue

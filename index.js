@@ -1,10 +1,10 @@
 const { json, send, text } = require('micro')
 const micro = require('micro')
-const config = require('../config')
-const actions = require('../actions')
-const { signRequestBody } = require('../lib/crypto')
+const config = require('./config')
+const actions = require('./actions')
+const { signRequestBody } = require('./lib/crypto')
 
-const app = async (req, res) => {
+module.exports = async (req, res) => {
   if (req.headers['content-type'] !== 'application/json') {
     return send(res, 500, { body: `Update webhook to send 'application/json' format`})
   }
@@ -72,5 +72,3 @@ const app = async (req, res) => {
     send(res, 500, { body: `Error occurred: ${err}` })
   }
 }
-const server = micro(app)
-server.listen(3000)

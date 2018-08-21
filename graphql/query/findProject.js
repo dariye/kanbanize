@@ -1,4 +1,4 @@
-const findProject = `
+module.exports = `
   query FindProject($owner: String!, $name: String!, $projectName: String!) {
     repository(owner: $owner, name: $name) {
       projects(first: 1, search: $projectName) {
@@ -29,4 +29,3 @@ const findProject = `
     }
   }
 `
-module.exports = findProject
