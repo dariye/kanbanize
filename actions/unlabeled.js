@@ -6,16 +6,21 @@ const {
 } = require('../lib/github')
 
 module.exports = async (payload) => {
-  const { issue: { number }, label: { name } } = payload
-  const variables =  Object.assign({}, baseVariables, {
-    number, projectName: name
-  })
+  try {
+    const { issue: { number }, label: { name } } = payload
+    const variables =  Object.assign({}, baseVariables, {
+      number, projectName: name
+    })
 
-  const issue = await graphqlClient.request(query.findIssue, variables)
-  if (issue.repository.issue.projectCards.edges.length === 0) return
+    const issue = await graphqlClient.request(query.findIssue, variables)
+    if (issue.repository.issue.projectCards.edges.length === 0) return
 
-  const card = issue.repository.issue.projectCards.edges[0].node
-  if (card.project.name === name) {
-    await deleteProjectCard({ card })
+    const card = issue.repository.issue.projectCards.edges[0].node
+    if (card.project.name === name) {
+      await deleteProjectCard({ card })
+    }
+  } catch(err) {
+    console.log(err)
+    return new Error(err)
   }
 }

@@ -1,6 +1,8 @@
 {
+  "version": 2,
   "name": "kanbanize",
-  "alias": "kanbanize",
-  "env": [ "TOKEN", "WEBHOOK_SECRET", "OWNER", "REPOSITORY" ],
-  "type": "npm"
+  "env": { "TOKEN": "6351656012bc7249101cd4d20b02ee0a27fc83f8", "WEBHOOK_SECRET" : "kanbadize3000", "OWNER" : "pauldariye", "REPOSITORY" : "kanbanize" },
+  "builds": [
+    { "src": "index.js", "use": "now-micro" }
+  ]
 }

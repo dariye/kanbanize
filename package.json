@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development  bin/start-dev.sh",
-    "start": "micro",
+    "start": "node index.js",
     "ngrok": "node bin/start-ngrok.js",
     "precommit": "lint-staged",
     "lint": "xo",
@@ -34,7 +34,8 @@
     "github-api": "^3.0.0",
     "graphql-request": "^1.8.2",
     "joi": "^13.1.2",
-    "micro": "^9.1.4"
+    "micro": "^9.1.4",
+    "now-micro": "^0.3.0"
   },
   "devDependencies": {
     "concurrently": "^3.6.0",
