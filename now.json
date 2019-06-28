@@ -1,4 +1,5 @@
 {
+  "version": 1,
   "name": "kanbanize",
   "alias": "kanbanize",
   "env": [ "TOKEN", "WEBHOOK_SECRET", "OWNER", "REPOSITORY" ],
