@@ -2,6 +2,11 @@
   "version": 1,
   "name": "kanbanize",
   "alias": "kanbanize",
-  "env": [ "TOKEN", "WEBHOOK_SECRET", "OWNER", "REPOSITORY" ],
+  "env": {
+    "TOKEN": "@token",
+    "WEBHOOK_SECRET": "@webhook_secret",
+    "OWNER": "@owner",
+    "REPOSITORY": "@repository"
+  },
   "type": "npm"
 }
