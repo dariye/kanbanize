@@ -27,6 +27,12 @@ Visit [https://localhost:3000](https://localhost:3000) or `https://[NGROK_SUBDOM
 
 Deploy it to the cloud with [now](https://zeit.co/now) ([download](https://zeit.co/download))
 ```bash
+# configure now deployment
+now secrets add owner [your github repository org/user]
+now secrets add repository [your github repository name]
+now secrets add token [your github access token]
+now secrets add webhook_secret [secret configured in the webook]
+# deploy
 now
 ```
 
