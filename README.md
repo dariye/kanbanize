@@ -1,4 +1,5 @@
 [![Deploy to now](https://deploy.now.sh/static/button.svg)](https://deploy.now.sh/?repo=https://github.com/pauldariye/kanbanize&env=TOKEN&env=WEBHOOK_SECRET&env=OWNER&env=RESPOSITORY)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/remix/kanbanize/ca1589ea-ae22-4483-a2ee-c0b4c426e43f)
 # Kanbanize
 
@@ -41,3 +42,19 @@ now
 
 ## License
 MIT
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://www.betafabric.com/francisco/"><img src="https://avatars0.githubusercontent.com/u/208149?v=4" width="100px;" alt="Francisco Lourenço"/><br /><sub><b>Francisco Lourenço</b></sub></a><br /><a href="https://github.com/pauldariye/kanbanize/commits?author=franciscolourenco" title="Code">💻</a> <a href="https://github.com/pauldariye/kanbanize/commits?author=franciscolourenco" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

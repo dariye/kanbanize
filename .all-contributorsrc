@@ -1,0 +1,24 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "franciscolourenco",
+      "name": "Francisco Lourenço",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/208149?v=4",
+      "profile": "https://www.betafabric.com/francisco/",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "kanbanize",
+  "projectOwner": "pauldariye",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
